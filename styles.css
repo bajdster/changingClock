@@ -1,0 +1,258 @@
+html
+{
+    width:100vw;
+    height: 100vh;
+}
+body
+{
+    margin:0;
+    padding:0;
+    width:100%;
+    height: 100%;
+    background: url("pattern.png");
+    background-size: cover;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+container
+{
+    width: 100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.switch
+{
+    height: 110px;
+    width: 320px;
+    background-color: aliceblue;
+    position: fixed;
+    top:0;
+    border-bottom-left-radius: 110px;
+    border-bottom-right-radius: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch:hover
+{
+    cursor: pointer;
+    background-color: rgb(205, 216, 225);
+}
+.clockIcon
+{
+    width:40%;
+    height: 60%;
+    position:relative;
+}
+.clockIcon img
+{
+    width:100%;
+    height: 100%;
+}
+.trad
+{
+    position:absolute;
+    transition: 1s;
+}
+.alarm
+{
+    position: absolute;
+    transition: 1s;
+    opacity: 0;
+    transform: translateX(200px) rotate(-40deg) translateY(-150px);
+
+    
+}
+.active
+{
+    transform: translateX(0px);
+    opacity: 1;
+}
+.inactive
+{
+    transform: translateX(-170px) rotate(40deg) translateY(-150px);
+    opacity: 0;
+}
+
+.clock
+{
+    
+    width:50%;
+    height: 40%;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 20px black;
+    font-family: 'Geostar Fill', cursive;
+    color: rgb(199, 195, 195);
+    font-size: 80px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 10px 10px 10px black;
+    position: absolute;
+    transition:1s;
+}
+.blink
+{
+    font-size: 50px;
+    animation: blinking 1s ease infinite;
+    text-shadow: 10px 10px 10px black;
+}
+
+.tradClock
+{
+    width:400px;
+    height: 400px;
+    background-color: rgb(35, 34, 34);
+    border-radius: 50%;
+    color: #fff;
+    border: 0.2rem solid #fff;
+    padding: 0.4em;
+    box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #bc13fe,
+                0 0 0.8rem #bc13fe,
+                0 0 2.8rem #bc13fe,
+                inset 0 0 1.3rem #bc13fe;
+    transform:translateX(999px);
+    position: absolute;
+    opacity: 0;
+    transition: 1s;
+}
+.face
+{
+    position: relative;
+    width:100%;
+    height: 100%;
+    border-radius: 50%;
+    display:flex;
+}
+.clockActive
+{
+    transform: translateX(0px);
+    display:flex;
+    opacity: 1;
+    
+}
+.clockInactive
+{
+    transform: translateX(-1100px);
+    opacity: 0;
+}
+.Ind
+{
+    width: 50%;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    transform-origin:100%;
+    /* transform:rotate(90deg); */
+    transition: all 0.5s;
+    
+}
+.hourInd
+{
+    /* width:10%; */
+    height: 7px;
+    background-color:rgb(255, 255, 255);
+    box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #7a0078,
+                0 0 0.8rem #630d5e,
+                0 0 2.8rem #bc13fe,
+                inset 0 0 1.3rem #bc13fe;
+    z-index: 100;
+
+}
+.minuteInd
+{
+    /* width:120px;
+    height: 5px; */
+    background-color:rgb(242, 0, 255);
+    box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #bc13fe,
+                0 0 0.8rem #bc13fe,
+                0 0 2.8rem #bc13fe,
+                inset 0 0 1.3rem #bc13fe;
+}
+.secondInd
+{
+    /* width:120px;
+    height: 5px; */
+    background-color:rgb(242, 0, 255);
+    box-shadow: 0 0 .2rem #fff,
+                0 0 .2rem #fff,
+                0 0 2rem #6f0303,
+                0 0 0.8rem #760303,
+                0 0 2.8rem #a90404,
+                inset 0 0 1.3rem #7f0202;
+}
+
+.details
+{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    display:flex;
+    filter:blur(1px)
+}
+
+.ver
+{
+   
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.hor
+{
+    align-items: center;
+    justify-content: space-between;
+}
+.up,
+.down,
+.left,
+.right
+{
+    font-size: 40px;
+    font-family: 'Geostar Fill', cursive;
+    color:rgb(96, 96, 96);
+    text-shadow: 2px 5px 10px rgb(2, 2, 2);
+}
+
+/* .details-one
+{
+    position:absolute;
+    width: 100%;
+    height: 2px;
+    transform: rotate(45deg);
+    background-color:lavender ;
+} */
+
+@keyframes blinking 
+{
+    0%
+    {
+        opacity:1;
+    }
+    90%
+    {
+        opacity:0;
+    }
+}
+
+@media screen and (max-width:1000px)
+{
+        .clock
+        {
+            font-size:40px;
+        }
+}
+
+/* nie ma efektu transition dla display:none -> display:flex*/
+/*zmiana na opacity + transform + overflow:hidden*/
