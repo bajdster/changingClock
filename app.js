@@ -41,7 +41,7 @@ function setTime()
     secInd.style.transform = `rotate(${secDeg}deg)`
     let minDeg = ((minutes/60)*360)+90;
     minInd.style.transform = `rotate(${minDeg}deg)`
-    let hourDeg = ((hour/12)*360)+90;
+    let hourDeg = ((hour/12)*360)+90+(minutes*0.5);
     hourInd.style.transform = `rotate(${hourDeg}deg)`
 
 }
